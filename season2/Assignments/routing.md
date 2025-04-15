@@ -26,34 +26,34 @@ app.get('ab?c') -> b is optional
 
 # Middlerwares and Error Handlers
 
-server.get("/abc", (req, res) => {
-    console.log(req.query)
-    res.send("Hello Snehal::::" + req.query.userId) --- # Always send response back to the client otherwise the request will be hanged
-     // and timeout will happen and request will be back
-})
+  `server.get("/abc", (req, res) => {
+      console.log(req.query)
+      res.send("Hello Snehal::::" + req.query.userId) --- # Always send response back to the client otherwise the request will be hanged
+      // and timeout will happen and request will be back
+  })`
 
 - There can be multiple request handlers
 
-server.get("/abc", (req, res, next) => {
-    console.log(req.query)
-    // we are not sending response back here
-    next() -> when we call next it will go to next request handler
-},(req, res) => {
-    console.log(req.query)
-})
+    `server.get("/abc", (req, res, next) => {
+        console.log(req.query)
+        // we are not sending response back here
+        next() -> when we call next it will go to next request handler
+    },(req, res) => {
+        console.log(req.query)
+    })`
 
 # Request handlers can be an array too.
 
-server.get("/abc", (req, res, next) => {
-    console.log(req.query)
-    // we are not sending response back here
-    next() -> when we call next it will go to next request handler
-},[(req, res, next) => {
-    console.log(req.query)
-},(req, res, next) => {
-  console.log("Hellow")
-  res.send("Helllo")
-}])
+`server.get("/abc", (req, res, next) => {
+        console.log(req.query)
+        // we are not sending response back here
+        next() -> when we call next it will go to next request handler
+    },[(req, res, next) => {
+        console.log(req.query)
+    },(req, res, next) => {
+      console.log("Hellow")
+      res.send("Helllo")
+    }])`
 
 # middlerwear for authorization 
 
