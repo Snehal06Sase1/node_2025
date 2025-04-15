@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "express": "^5.1.0",
-    "mongodb": "^6.15.0"
+    "mongodb": "^6.15.0",
+    "mongoose": "^8.13.2"
   },
   "name": "node_2025",
   "version": "1.0.0",
   "description": "This is node js repository",
   "main": "season2/src/app.js",
-  "devDependencies": {},
   "scripts": {
     "start": "node season2/src/app.js",
     "dev": "nodemon season2/src/app.js"
