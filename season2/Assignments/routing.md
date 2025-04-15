@@ -57,15 +57,15 @@ server.get("/abc", (req, res, next) => {
 
 # middlerwear for authorization 
 
-server.use("/admin", (req, res, next) => {
-    const token = "xyzzx";
-    const isAuthorisedUser = token === "xyx";
-    if(isAuthorisedUser) {
-        next();
-    } else {
-        res.status(401).send("Unauthorised user!")
-    }
-})
+      `server.use("/admin", (req, res, next) => {
+          const token = "xyzzx";
+          const isAuthorisedUser = token === "xyx";
+          if(isAuthorisedUser) {
+              next();
+          } else {
+              res.status(401).send("Unauthorised user!")
+          }
+      })`
 
 This part is common for the all the requests so it will be in middlewear.
 
